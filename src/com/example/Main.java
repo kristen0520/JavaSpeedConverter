@@ -1,15 +1,18 @@
 package com.example;
 
-public class Main {
-
-    public static double milesPerHour(double kilometersPerHour){
-        double mph = kilometersPerHour / 0.6213712;
-        mph = Math.round(mph);
-        System.out.println(kilometersPerHour + " is equal to " + mph);
+public class SpeedConverter {
+    public static long toMilesPerHour(double kilometersPerHour){
+        double mphD = kilometersPerHour * 0.6213712;
+        long mph = Math.round(mphD);
         return mph;
     }
-
-    public static void main(String[] args) {
-	    milesPerHour(777);
+    public static void printConversion(double kilometersPerHour){
+        if(kilometersPerHour < 0){
+            System.out.println("Invalid Value");
+        }
+        else{
+            long mph = Math.round(kilometersPerHour * 0.6213712);
+            System.out.println(kilometersPerHour + " km/h = " + mph + " mi/h");
+        }
     }
 }
